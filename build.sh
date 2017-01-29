@@ -1,1 +1,1 @@
-docker build -t make-it-rain .
+docker build -t mrgrodo/make-it-rain .

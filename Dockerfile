@@ -7,3 +7,5 @@ RUN bundle install
 
 WORKDIR /make-it-rain
 ADD . /make-it-rain
+
+ENTRYPOINT puma -p 3000
