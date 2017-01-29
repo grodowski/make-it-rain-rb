@@ -3,8 +3,8 @@ require 'gif_repo'
 
 # Posts a Slack notification
 class Slack
-  def self.notify(amount)
-    new(MKR_SLACK_WEBHOOK_URL, amount).notify
+  def self.notify?(amount)
+    new(MKR_SLACK_WEBHOOK_URL, amount).notify?
   end
 
   def initialize(url, amount)

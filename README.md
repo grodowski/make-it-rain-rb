@@ -1,7 +1,7 @@
 # Make It Rain
 
 [![travis](https://travis-ci.org/grodowski/make-it-rain.svg?branch=master)](https://travis-ci.org/grodowski/make-it-rain)
-![codebeat]([![codebeat badge](https://codebeat.co/badges/408992a2-8ac4-4ac1-bd1e-29b404d9d46c)](https://codebeat.co/projects/github-com-grodowski-make-it-rain))
+[![codebeat badge](https://codebeat.co/badges/408992a2-8ac4-4ac1-bd1e-29b404d9d46c)](https://codebeat.co/projects/github-com-grodowski-make-it-rain)
 
 Get a random "make it rain" gif every time you get paid through Braintree.
 
