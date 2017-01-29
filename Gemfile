@@ -2,5 +2,6 @@
 source 'https://rubygems.org'
 
 gem 'braintree'
+gem 'pry', require: false
 gem 'puma'
 gem 'rack'
