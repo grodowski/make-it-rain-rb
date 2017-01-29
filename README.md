@@ -1,8 +1,8 @@
 # Make It Rain
 
-Get a random "make it rain" gif every time you get paid through Stripe.
+Get a random "make it rain" gif every time you get paid through Braintree.
 
-Works with HipChat + Slack.
+Works with Slack.
 
 ![screenshot](https://i.imgur.com/gU7gFBW.gif)
 
