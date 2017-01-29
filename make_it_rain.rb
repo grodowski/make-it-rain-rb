@@ -29,7 +29,7 @@ class MakeItRain
     )
     if parsed.kind ==
        Braintree::WebhookNotification::Kind::SubscriptionChargedSuccessfully
-      return subscription.transactions.first.amount.to_f # first, or last? woot
+      return parsed.subscription.transactions.first.amount.to_f
     end
     nil
   end
