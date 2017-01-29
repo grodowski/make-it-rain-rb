@@ -12,8 +12,8 @@ class Slack
     @amount = amount
   end
 
-  def notify
-    Net::HTTP.post_form(@url, payload: contents.to_json)
+  def notify?
+    Net::HTTP.post_form(@url, payload: contents.to_json).code.to_i == 200
   end
 
   def contents

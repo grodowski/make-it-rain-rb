@@ -12,7 +12,7 @@ class MakeItRain
     return [401, {}, []] unless secret_valid?
     amount = parse_amount
     return [200, {}, ['event skipped']] unless amount
-    Slack.notify(amount)
+    return [422, {}, ['notification failed']] unless Slack.notify?(amount)
     [204, { 'Content-Length' => '0' }, []]
   end
 
