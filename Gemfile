@@ -5,3 +5,5 @@ gem 'braintree'
 gem 'pry', require: false
 gem 'puma'
 gem 'rack'
+gem 'rake'
+gem 'rubocop', group: :test
