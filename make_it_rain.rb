@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 Bundler.require
 require 'environment'
+require 'slack'
 
 # Main application
 class MakeItRain
