@@ -3,9 +3,9 @@
 [![travis](https://travis-ci.org/grodowski/make-it-rain.svg?branch=master)](https://travis-ci.org/grodowski/make-it-rain)
 [![codebeat badge](https://codebeat.co/badges/408992a2-8ac4-4ac1-bd1e-29b404d9d46c)](https://codebeat.co/projects/github-com-grodowski-make-it-rain)
 
-Get a random "make it rain" gif every time you get paid through Braintree.
+Credits to @fitztrev for an excellent idea! Check the original PHP/Slack/Stripe version https://github.com/fitztrev/make-it-rain. This is a weekend rewrite using Ruby, plain old Rack, Braintree, Slack and Docker Cloud, that just brings make-it-rain awesomeness to any application by using containers. 🙃 Get a random "make it rain" gif every time you get paid through Braintree!
 
-Works with Slack.
+Works with Slack and Braintree.
 
 ![screenshot](https://i.imgur.com/gU7gFBW.gif)
 
@@ -15,27 +15,11 @@ Send pull requests to the `gh-pages` branch to add more.
 
 ## How to use
 
-1) Copy `config.sample.php` to `config.php`
+1) Check out the Docker image: https://hub.docker.com/r/mrgrodo/make-it-rain/
 
-2) Update it with either your Hipchat or Slack API info (see below)
+2) Create a ["Successful Charge" webhook in Braintree](https://developers.braintreepayments.com/guides/webhooks/overview)
 
-3) Add a webhook to [your Stripe account](https://dashboard.stripe.com/account/webhooks)
-
-    https://YOUR_SITE_HERE.com/make-it-rain/webhook.php?secret=abc123
-
-* Your `secret` is set in `config.php` and known only to Stripe so nobody can ping that URL and give you a false notification.
-
-#### For Hipchat
-
-1. Go to <https://hipchat.com/admin/rooms>
-2. Click your room and copy "API ID" to the channel setting in `config.php`
-3. In "Tokens" for that room, create a token with label "Just got paid" and copy it to `config.php`
-
-#### For Slack
-
-1. Go to <https://my.slack.com/services/new/incoming-webhook>
-2. Create a webhook for your desired channel
-3. Copy the webhook URL to `config.php`
+2) Provide environment variables with your Braintree webhook and a Slack access token - `environment.rb` loads them all.
 
 ## Contributing gifs
 
