@@ -15,7 +15,7 @@ Send pull requests to the `gh-pages` branch to add more.
 
 ## How to use
 
-1) Check out the Docker image: https://hub.docker.com/r/mrgrodo/make-it-rain/
+1) Check out the Docker image: https://hub.docker.com/r/mrgrodo/make-it-rain-rb/
 
 2) Create a ["Successful Charge" webhook in Braintree](https://developers.braintreepayments.com/guides/webhooks/overview)
 
