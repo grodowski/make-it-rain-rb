@@ -1,7 +1,7 @@
 # Make It Rain
 
 [![Build Status](https://travis-ci.org/grodowski/make-it-rain-rb.svg?branch=master)](https://travis-ci.org/grodowski/make-it-rain-rb)
-[![codebeat badge](https://codebeat.co/badges/d96a8fd9-8030-438b-9a69-b87c81ff20fb)](https://codebeat.co/projects/github-com-grodowski-make-it-rain-rb-master)
+[![codebeat badge](https://codebeat.co/badges/9170aae8-c902-4884-ad48-919dd43c54b1)](https://codebeat.co/projects/github-com-grodowski-make-it-rain-rb-master)
 
 Credits to @fitztrev for an excellent idea! Check the original PHP/Slack/Stripe version https://github.com/fitztrev/make-it-rain. This is a weekend rewrite using Ruby, plain old Rack, Braintree, Slack and Docker Cloud, that just brings make-it-rain awesomeness to any application by using containers. 🙃 Get a random "make it rain" gif every time you get paid through Braintree!
 
