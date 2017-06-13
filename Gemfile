@@ -3,8 +3,13 @@ source 'https://rubygems.org'
 
 gem 'braintree'
 gem 'chargebee'
-gem 'pry', require: false
 gem 'puma'
 gem 'rack'
 gem 'rake'
-gem 'rubocop', group: :test
+
+group :test, :development do
+  gem 'pry', require: false
+  gem 'rack-test', require: false
+  gem 'rubocop', require: false
+  gem 'test-unit', require: false
+end

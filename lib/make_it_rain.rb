@@ -24,7 +24,7 @@ class MakeItRain
     sc && sc == MKR_APP_SECRET
   end
 
-  # TODO: add tests & refactor!
+  # TODO: add tests & refactor in a separate PR!
   # rubocop:disable Metrics/AbcSize
   def parse_amount
     cb_amt = JSON.parse(@req.body.read).dig('content', 'transaction', 'amount')
