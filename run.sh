@@ -5,5 +5,5 @@ docker run \
   -p "3000:3000" \
   --env-file ".env" \
   -v "$(pwd):/make-it-rain" \
-  --entrypoint bash
+  --entrypoint bash \
   mrgrodo/make-it-rain

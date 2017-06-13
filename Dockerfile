@@ -1,9 +1,12 @@
-FROM ruby:2.3.3
+FROM ruby:2.4.1
 RUN mkdir /make-it-rain
+
+RUN apt-get update && apt-get -y upgrade openssl
 
 COPY Gemfile* /tmp/
 WORKDIR /tmp
-RUN bundle install
+
+ENV BUNDLE_PATH /make-it-rain/.bundle
 
 WORKDIR /make-it-rain
 ADD . /make-it-rain

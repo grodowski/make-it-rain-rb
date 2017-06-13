@@ -2,6 +2,7 @@
 source 'https://rubygems.org'
 
 gem 'braintree'
+gem 'chargebee'
 gem 'pry', require: false
 gem 'puma'
 gem 'rack'
