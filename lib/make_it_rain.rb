@@ -24,13 +24,17 @@ class MakeItRain
     sc && sc == MKR_APP_SECRET
   end
 
+  # TODO: add tests & refactor!
+  # rubocop:disable Metrics/AbcSize
   def parse_amount
-    parsed = Braintree::WebhookNotification.parse(
+    cb_amt = JSON.parse(@req.body.read).dig('content', 'transaction', 'amount')
+    return cb_amt / 100 if cb_amt
+    bt_parsed = Braintree::WebhookNotification.parse(
       params['bt_signature'], params['bt_payload']
     )
-    if parsed.kind ==
+    if bt_parsed.kind ==
        Braintree::WebhookNotification::Kind::SubscriptionChargedSuccessfully
-      return parsed.subscription.transactions.first.amount.to_f
+      return bt_parsed.subscription.transactions.first.amount.to_f
     end
     nil
   end
