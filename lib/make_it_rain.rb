@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 Bundler.require
 require 'environment'
 require 'slack'
@@ -40,6 +41,7 @@ class MakeItRain
 
   def process_chargebee
     req_body = JSON.parse(@req.body.read)
+    return unless req_body['event_type'] == 'payment_succeeded'
     cb_amt = req_body.dig('content', 'transaction', 'amount')
     return cb_amt / 100 if cb_amt
   end

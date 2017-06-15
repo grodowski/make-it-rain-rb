@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'gif_repo'
 
 # Posts a Slack notification
