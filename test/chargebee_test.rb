@@ -11,8 +11,10 @@ class ChargebeeTest < Test::Unit::TestCase
     builder.run MakeItRain.new
   end
 
-  def test_response_is_403_without_secret
+  def test_response_is_401_without_secret
     get '/'
     assert_equal last_response.status, 401
   end
+
+  # TODO(janek): add more tests
 end
