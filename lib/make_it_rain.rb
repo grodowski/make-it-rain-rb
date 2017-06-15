@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 Bundler.require
 require 'environment'
 require 'slack'
@@ -27,8 +28,7 @@ class MakeItRain
   # TODO: add tests & refactor in a separate PR!
   # rubocop:disable Metrics/AbcSize
   def parse_amount
-    cb_amt = JSON.parse(@req.body.read).dig('content', 'transaction', 'amount')
-    return cb_amt / 100 if cb_amt
+    return process_chargebee unless params['bt_signature']
     bt_parsed = Braintree::WebhookNotification.parse(
       params['bt_signature'], params['bt_payload']
     )
@@ -37,5 +37,12 @@ class MakeItRain
       return bt_parsed.subscription.transactions.first.amount.to_f
     end
     nil
+  end
+
+  def process_chargebee
+    req_body = JSON.parse(@req.body.read)
+    return unless req_body['event_type'] == 'payment_succeeded'
+    cb_amt = req_body.dig('content', 'transaction', 'amount')
+    return cb_amt / 100 if cb_amt
   end
 end

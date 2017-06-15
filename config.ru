@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 $LOAD_PATH << 'lib'
 
 require 'make_it_rain'
