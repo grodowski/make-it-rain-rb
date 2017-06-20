@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# TODO(janek): rework to a Configuration object to make reloads easier
+
 # pass this to *every* webhook as a GET param: "?secret=<MKR_APP_SECRET>"
 MKR_APP_SECRET = ENV.fetch('MKR_APP_SECRET')
 
