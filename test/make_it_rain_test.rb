@@ -4,12 +4,11 @@ require 'minitest/autorun'
 require 'rack/test'
 require 'make_it_rain'
 
-class ChargebeeTest < Minitest::Test
+class MakeItRainTest < Minitest::Test
   include Rack::Test::Methods
 
   def app
-    builder = Rack::Builder.new
-    builder.run MakeItRain.new
+    MakeItRain::App.new
   end
 
   def test_response_is_401_without_secret
